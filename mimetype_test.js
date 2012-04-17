@@ -14,5 +14,20 @@ var assert = require('assert'),
   mimetype = require('./mimetype');
 
 console.log("Starting tests [mimetype.js] ...", new Date());
-assert.ok(false, "Tests Not Implemented yet.");
+
+assert.equal(mimetype.lookup("myfile.txt"), 'text/plain', "lookup should return text/plain");
+assert.equal(mimetype.set('.exotic', 'x-application/experimental'), true, "set should return true.");
+assert.equal(mimetype.lookup("myfile.exotic"), "x-application/experimental", "lookup should return x-application/experimental");
+assert.equal(mimetype.del('.exotic'), true, "del() should return true");
+assert.equal(mimetype.lookup("myfile.exotic"), false, "lookup(myfile.exotic) should return false now");
+ky_cnt = Object.keys(mimetype.catalog).length;
+i = 0;
+mimetype.forEach(function (ext, mime_type_string) {
+	assert.ok(ext, "Should have an ext");
+	assert.ok(mime_type_string, "Should have a mime_type string");
+	assert.strictEqual(mimetype.catalog[ext], mime_type_string);
+	i += 1;
+});
+assert.equal(ky_cnt, i, "i should equal ky_cnt");
+
 console.log("Success!", new Date());
