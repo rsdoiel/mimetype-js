@@ -17,14 +17,28 @@ if (require !== undefined) {
 
 
 (function () {
-	var self = { catalog: {
+	var self = { 
+		charset: 'UTF-8',
+		catalog: {
 			'.txt': 'text/plain',
 			'.html': 'text/html',
-			'.png': 'image/png'
-		}};
+			'.js': 'application/javascript',
+			'.json': 'application/json',
+			'.css': 'text/css',
+			'.xml': 'text/xml',
+			'.csv': 'text/csv',
+			'.ico': 'image/icon',
+			'.jpg': 'image/jpeg',
+			'.png': 'image/png',
+		}
+	};
 	
-	self.lookup = function (fname) {
+	self.lookup = function (fname, include_charset) {
 		var ext;
+		
+		if (include_charset === undefined) {
+			include_charset = false;
+		}
 
 		if (path.extname !== undefined) {
 			ext = path.extname(fname);
@@ -35,11 +49,17 @@ if (require !== undefined) {
 		}
 
 		if (self.catalog[ext] !== undefined) {
-			return self.catalog[ext];
+			if (include_charset === true && 
+				self.catalog[ext].toLowerCase().indexOf('text/') === 0 &&
+				self.catalog[ext].toLowerCase().indexOf('charset') < 0) {
+				return self.catalog[ext] + '; charset=' + self.charset;
+			} else {
+				return self.catalog[ext];
+			}
 		}
 		return false;
 	};
-	
+		
 	self.set = function (ext, mime_type_string) {
 		self.catalog[ext] = mime_type_string;
 		return (self.catalog[ext] !== undefined);
@@ -61,6 +81,7 @@ if (require !== undefined) {
 		exports = {};
 	}
 
+	exports.charset = self.charset;
 	exports.catalog = self.catalog;
 	exports.lookup = self.lookup;
 	exports.set = self.set;
