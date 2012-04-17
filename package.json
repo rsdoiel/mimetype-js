@@ -1,0 +1,31 @@
+{
+	"name" : "mimetype",
+	"version" : "0.0.0,
+	"description" : "A mimetype catalog module.",
+	"main" : "./mimetype.js",
+	"repository" : {
+		"type" : "git", 
+		"url" : "https://github.com/rsdoiel/mimetype-js.git"
+	},
+	"author" : {
+		"name" : "R. S. Doiel", 
+		"email" : "rsdoiel@gmail.com", 
+		"url" : "https://github.com/rsdoiel"
+	},
+	"maintainers" : [{
+		"name" : "R. S. Doiel", 
+		"url" : "https://github.com/rsdoiel"
+	}],
+	"engines" : {
+		"node" : ">= 0.6",
+		"npm" : ">= 1"
+	},
+	"dependencies" : {
+	},
+	"scripts" : {
+		"test" : "node mimetype_test.js"
+	},
+	"bugs": {
+		"url": "http://github.com/rsdoiel/mimetype-js/issues"
+   	}
+}
