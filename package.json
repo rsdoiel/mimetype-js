@@ -1,7 +1,7 @@
 {
 	"name" : "mimetype",
-	"version" : "0.0.1",
-	"description" : "A mimetype catalog module.",
+	"version" : "0.0.2",
+	"description" : "A mimetype catalog module driven by filename extensions.",
 	"main" : "./mimetype.js",
 	"repository" : {
 		"type" : "git", 
