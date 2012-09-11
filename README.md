@@ -1,7 +1,6 @@
+[![build status](https://secure.travis-ci.org/rsdoiel/mimetype.png)](http://travis-ci.org/rsdoiel/mimetype)
 mimetype-js
 ===========
-revision 0.0.2
---------------
 
 # Overview
 
