@@ -51,17 +51,25 @@ harness.push({callback: function () {
 // tests for version 0.0.3
 harness.push({callback: function () {
     Object.keys(v0_0_3).forEach(function (i) {
-        var vals, j;
+        var vals, j, testname;
         
         assert.ok(v0_0_3[i].mime_type, "Missing v0_0_3 index:" + i);
         if (v0_0_3[i].ext !== undefined) {
             if (v0_0_3[i].ext.indexOf(" ") > 0) {
                 vals = v0_0_3[i].ext.split(" ");
                 for (j = 0; j < vals.length; j += 1) {
-                    assert.equal(mimetype.lookup(["testname",v0_0_3[i].ext[j]].join("")), v0_0_3[i].mime_type, [v0_0_3[i].mime_type, ,v0_0_3[i].ext[j]].join(" ") + " failed");
+                    testname = ["testname", vals[j]].join(".");
+                    assert.equal(
+                        mimetype.lookup(testname), 
+                        v0_0_3[i].mime_type, 
+                        [testname, mimetype.lookup(testname), '->', v0_0_3[i].mime_type, vals[j], "failed"].join(" "));
                 }
             } else {
-                assert.equal(mimetype.lookup(["testname", v0_0_3[i].ext].join("")), v0_0_3[i].mime_type, [v0_0_3[i].mime_type, v0_0_3[i].ext].join(" ") + " failed");
+                testname = ["testname", v0_0_3[i].ext].join(".");
+                assert.equal(
+                    mimetype.lookup(testname),
+                    v0_0_3[i].mime_type, 
+                    [testname, v0_0_3[i].mime_type, "failed"].join(" "));
             }
         }
     });
