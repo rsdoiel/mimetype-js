@@ -7,7 +7,9 @@ mimetype-js
 I find keep making these file extension lookup tables for mime types.  It's 
 about time I put it in a module to save me the trouble.
 
-# Example general case.
+# Examples
+
+## general case
 
 ```JavaScript
 	var mimetype = require('mimetype');
@@ -22,7 +24,7 @@ about time I put it in a module to save me the trouble.
 	});
 ```
 
-# Special cases
+## Special cases
 
 Sometimes detecting by filename extensions isn't work and you want to 
 default to a general purposes mime-type (e.g. text/plain, application/octet-stream).
@@ -38,7 +40,7 @@ default to a general purposes mime-type (e.g. text/plain, application/octet-stre
 	console.log(mimetype.lookup("filename.unknownMimeType", "UTF-8", "text/plain");
 ```
 
-# Using mimetype.js with MongoDB Shell
+## Using mimetype.js with MongoDB Shell
 
 While this was implemented as a NodeJS module it also works under MongoDB's shell.
 Instead of including with a "require" you would load the JavaScript file _load-mimetype.js_.
