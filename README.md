@@ -1,4 +1,4 @@
-[![build status](https://secure.travis-ci.org/rsdoiel/mimetype.png)](http://travis-ci.org/rsdoiel/mimetype)
+[![build status](https://secure.travis-ci.org/rsdoiel/mimetype-js.png)](http://travis-ci.org/rsdoiel/mimetype-js)
 mimetype-js
 ===========
 
