@@ -1,7 +1,7 @@
 {
 	"name" : "mimetype",
-	"version" : "0.0.2",
-	"description" : "A mimetype catalog module driven by filename extensions.",
+	"version" : "0.0.3",
+	"description" : "A mime type catalog driven by filename extensions.",
 	"main" : "./mimetype.js",
 	"repository" : {
 		"type" : "git", 
@@ -17,7 +17,7 @@
 		"url" : "https://github.com/rsdoiel"
 	}],
 	"engines" : {
-		"node" : ">= 0.6",
+		"node" : ">= 0.8",
 		"npm" : ">= 1"
 	},
 	"dependencies" : {
