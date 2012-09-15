@@ -46,7 +46,7 @@ While this was implemented as a NodeJS module it also works under MongoDB's shel
 Instead of including with a "require" you would load the JavaScript file _load-mimetype.js_.
 
 ```JavaScript
-	load("./load-mimetype.js");
+	load("./extras/load-mimetype.js");
 	print("Check the mime type of test.txt:" + MimeType.lookup("test.txt"));
 ```
 
@@ -55,7 +55,7 @@ This would display something like-
 ```shell
 	MongoDB shell version: 2.2.0
 	connecting to: test
-	> load("./load-mimetype.js");
+	> load("./extras/load-mimetype.js");
 	> print("Check the mime type of test.txt: " + MimeType.lookup("test.txt"));
 	Check the mime type of test.txt: text/plain
 	> 

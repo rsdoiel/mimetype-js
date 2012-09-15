@@ -10,9 +10,9 @@
 
 var assert = require('assert'),
     path = require('path'),
-    harness = require('./harness'),
-    v0_0_3 = require('./v0.0.3').data,
-    mimetype = require('./mimetype');
+    harness = require('../lib/harness'),
+    v0_0_3 = require('../lib/v0.0.3').data,
+    mimetype = require('../mimetype');
 
 // Tests for version 0.0.2
 harness.push({callback: function () {    

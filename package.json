@@ -23,7 +23,7 @@
 	"dependencies" : {
 	},
 	"scripts" : {
-		"test" : "node mimetype_test.js"
+		"test" : "node tests/mimetype_test.js"
 	},
 	"bugs": {
 		"url": "http://github.com/rsdoiel/mimetype-js/issues"
