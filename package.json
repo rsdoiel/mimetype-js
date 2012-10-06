@@ -1,6 +1,6 @@
 {
 	"name" : "mimetype",
-	"version" : "0.0.3",
+	"version" : "0.0.4",
 	"description" : "A mime type catalog driven by filename extensions.",
 	"main" : "./mimetype.js",
 	"repository" : {
@@ -21,6 +21,7 @@
 		"npm" : ">= 1"
 	},
 	"dependencies" : {
+		"harness" : ">= 0.0.2"
 	},
 	"scripts" : {
 		"test" : "node tests/mimetype_test.js"

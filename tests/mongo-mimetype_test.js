@@ -11,9 +11,29 @@
 var assert = require('assert'),
 	path = require('path'),
 	harness = require('harness'),
-	v0_0_3 = require('../lib/v0.0.3').data,
-	mimetype = require('../mimetype');
+	mimetype = require('./mimetype'),
+	module = {
+		filename: "mongo-mimetype_test.js"
+	},
+	v0_0_3;
 
+(function () {
+	// Get the test data and shim Object.keys(), Array.forEach()
+	load(pwd() + "/lib/v0.0.3.js");
+	v0_0_3 = exports;
+}());
+
+if (Object.keys === undefined) {
+	Object.keys = function (obj) {
+		var keys = new Array(), ky;
+		for (ky in obj) {
+			if (obj.hasOwnProperty(ky)) {
+				keys.push(ky);
+			}
+		}
+		return keys;
+	};
+}
 // Tests for version 0.0.2
 harness.push({callback: function () {	
 		assert.equal(mimetype.lookup("myfile.txt"), 'text/plain', "lookup should return text/plain");
@@ -46,7 +66,7 @@ harness.push({callback: function () {
 		
 		assert.equal(mimetype.lookup("README"), "text/plain", "README should return text/plain mime-type.");
 		assert.equal(mimetype.lookup("manifest"), "text/cache-manifest", "manifest should return text/plain mime-type.");
-		harness.completed("tests for version 0.0.2");
+		harness.completed("tests for version 0.0.2")
 }, label: "tests for version 0.0.2"});
 
 // tests for version 0.0.3
@@ -77,8 +97,4 @@ harness.push({callback: function () {
 	harness.completed("tests for version 0.0.3");
 }, label: "tests for version 0.0.3"});
 
-if (require.main === module) {
-	harness.RunIt(path.basename(module.filename), 10);
-} else {
-	exports.RunIt = harness.RunIt;
-}
+harness.RunIt(path.basename(module.filename), 10);
