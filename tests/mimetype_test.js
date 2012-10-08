@@ -80,5 +80,5 @@ harness.push({callback: function () {
 if (require.main === module) {
     harness.RunIt(path.basename(module.filename), 10);
 } else {
-    exports.RunIt = harness.RunIt;
+	exports.RunIt = harness.RunIt;
 }
