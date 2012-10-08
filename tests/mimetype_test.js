@@ -10,7 +10,7 @@
 
 var assert = require('assert'),
     path = require('path'),
-    harness = require('../lib/harness'),
+    harness = require('harness'),
     v0_0_3 = require('../lib/v0.0.3').data,
     mimetype = require('../mimetype');
 
@@ -46,6 +46,7 @@ harness.push({callback: function () {
         
         assert.equal(mimetype.lookup("README"), "text/plain", "README should return text/plain mime-type.");
         assert.equal(mimetype.lookup("manifest"), "text/cache-manifest", "manifest should return text/plain mime-type.");
+        harness.completed("tests for version 0.0.2");
 }, label: "tests for version 0.0.2"});
 
 // tests for version 0.0.3
@@ -73,10 +74,11 @@ harness.push({callback: function () {
             }
         }
     });
+    harness.completed("tests for version 0.0.3");
 }, label: "tests for version 0.0.3"});
 
 if (require.main === module) {
-    harness.RunIt(path.basename(module.filename), 10, true);
+    harness.RunIt(path.basename(module.filename), 10);
 } else {
     exports.RunIt = harness.RunIt;
 }
