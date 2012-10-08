@@ -105,64 +105,6 @@
 			return self.catalog;
 		}
 	};
-<<<<<<< HEAD
-=======
-	/*
-	// Quick and dirty list of common mime-types I've run across
-	MimeType.set('.txt,.text,.md,README','text/plain');
-	MimeType.set('.html,.htm', 'text/html');
-	MimeType.set('.js', 'application/javascript');
-	MimeType.set('.json', 'application/json');
-	MimeType.set('.css', 'text/css');
-	MimeType.set('.xml,.dtd', 'text/xml');
-	MimeType.set('.csv', 'text/csv');
-	MimeType.set('.tsv', 'text/tab-separated-value');
-	MimeType.set('.ico', 'image/icon');
-	MimeType.set('.jpg,.jpeg,.jpe', 'image/jpeg');
-	MimeType.set('.qt,.mov', 'video/quicktime');
-	MimeType.set('.mpg,.mpeg,.mpe', 'video/mpeg');
-	MimeType.set('.png', 'image/png');
-	MimeType.set('.doc,.docx', 'application/msword');
-	MimeType.set('.xls', 'application/excel');
-	MimeType.set('.ppt', 'application/powerpoint');
-	MimeType.set('.bin', 'application/octet-stream');
-	MimeType.set('.pdf', 'application/pdf');
-	MimeType.set('.rtf', 'application/rtf');
-	MimeType.set(".ai,.eps,.ps", "application/postscript");
-	MimeType.set(".tar", "application/x-tar");
-	MimeType.set(".gz", "application/x-gzip");
-	MimeType.set(".tar.gz,.tgz", "application/x-tar-gz");
-	MimeType.set(".tar.bz,.tbz", "application/x-tar-bzip");
-	MimeType.set(".zip", "application/zip");
-	MimeType.set(".bz", "application/bzip");
-	MimeType.set(".au,.snd", "audio/basic");
-	MimeType.set(".wav", "audio/x-wav");
-	MimeType.set(".aif,.aiff,.aifc", "audio/x-aiff");
-	MimeType.set(".ogx", "application/ogg");
-	MimeType.set(".ogg,.spx,.oga", "audio/ogg");
-	MimeType.set(".ogv", "video/ogg");
-	MimeType.set(".mp3,.mp2,.mpga", "audio/mpeg");
-	MimeType.set(".rpm", "audio/x-pn-realaudio-plugin");
-	MimeType.set(".ram,.rm", "audio/x-pn-realaudio");
-	MimeType.set(".ra", "audio/x-realaudio");
-	MimeType.set(".flac", "audio/flac");
-	MimeType.set(".aac", "audio/x-aac");
-
-	MimeType.set(".gif", "image/gif");
-	MimeType.set(".jpg,.jpeg,.jpe", "image/jpeg");
-	MimeType.set(".png", "image/png");
-	MimeType.set(".tif,.tiff", "image/tiff");
-	// Not sure if this is real for .raw files
-	MimeType.set(".raw", "image/x-raw");
-	MimeType.set(".mpg,.mpeg,.mpe", "video/mpeg");
-	MimeType.set(".mp4,.m4a", "video/mp4");
-	MimeType.set(".qt,.mov", "video/quicktime");
-	MimeType.set(".avi", "video/x-msvideo");
-	MimeType.set(".asf", "video/x-ms-asf");
-	MimeType.set(".asx", "video/x-ms-asx");
-	MimeType.set(".wmv", "video/x-ms-wmv");
-	*/
->>>>>>> aba8173644824f87a62962f0fb625567a8d5f348
 	
 	// From Apache project's mime type list.
 	MimeType.set(".ez", "application/andrew-inset");
