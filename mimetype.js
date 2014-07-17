@@ -530,6 +530,7 @@
 	MimeType.set(".pcf", "application/x-font-pcf");
 	MimeType.set(".snf", "application/x-font-snf");
 	MimeType.set(".ttf,.ttc", "application/x-font-ttf");
+	MimeType.set(".woff", "application/font-woff");
 	MimeType.set(".pfa,.pfb,.pfm,.afm", "application/x-font-type1");
 	MimeType.set(".spl", "application/x-futuresplash");
 	MimeType.set(".gnumeric", "application/x-gnumeric");
