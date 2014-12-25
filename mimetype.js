@@ -7,9 +7,11 @@
 // Released under New the BSD License.
 // See: http://opensource.org/licenses/bsd-license.php
 //
-
+/*jslint indent: 4 */
+/*global require, exports */
 (function (self) {
-	var path;
+    "use strict";
+	var path, MimeType;
 	
 	// If we're NodeJS I can use the path module.
 	// If I'm MongoDB shell, not available.
@@ -54,21 +56,21 @@
 			
 			// Handle the special cases where their is no extension
 			// e..g README, manifest, LICENSE, TODO
-			if (ext == "") {
+			if (ext === "") {
 				ext = fname;
 			}
 	
 			if (this.catalog[ext] !== undefined) {
-				if (include_charset === true && 
-					this.catalog[ext].indexOf('text/') === 0 &&
-					this.catalog[ext].indexOf('charset') < 0) {
+				if (include_charset === true &&
+                        this.catalog[ext].indexOf('text/') === 0 &&
+                        this.catalog[ext].indexOf('charset') < 0) {
 					return this.catalog[ext] + '; charset=' + charset;
 				} else {
 					return this.catalog[ext];
 				}
 			} else if (default_mime_type !== undefined) {
-				if (include_charset === true && 
-					default_mime_type.indexOf('text/') === 0) {
+				if (include_charset === true &&
+                        default_mime_type.indexOf('text/') === 0) {
 					return default_mime_type + '; charset=' + charset;
 				}
 				return default_mime_type;
@@ -77,7 +79,8 @@
 		},
 		set: function (exts, mime_type_string) {
 			var result = true, self = this;
-			if (exts.indexOf(',')) {
+            //console.log("DEBUG exts.indexOf(',')", typeof exts.indexOf(','), exts.indexOf(','));
+			if (exts.indexOf(',') > -1) {
 				exts.split(',').forEach(function (ext) {
 					ext = ext.trim();
 					self.catalog[ext] = mime_type_string;
@@ -86,7 +89,7 @@
 					}
 				});
 			} else {
-				result = (self.catalog[exts] === mime_type_string);
+				self.catalog[exts] = mime_type_string;
 			}
 			return result;
 		},
@@ -707,7 +710,7 @@
 	MimeType.set(".jpm,.jpgm", "video/jpm");
 	MimeType.set(".mj2,.mjp2", "video/mj2");
 	MimeType.set(".mp4,.mp4v,.mpg4,.m4v", "video/mp4");
-	MimeType.set(".webm", "video/webm")
+	MimeType.set(".webm", "video/webm");
 	MimeType.set(".mpeg,.mpg,.mpe,.m1v,.m2v", "video/mpeg");
 	MimeType.set(".ogv", "video/ogg");
 	MimeType.set(".qt,.mov", "video/quicktime");
@@ -734,7 +737,7 @@
 	MimeType.set(".mobi", "application/x-mobipocket-ebook");
 
 	// Here's some common special cases without filename extensions
-	MimeType.set("README,LICENSE,COPYING,TODO,ABOUT,AUTHORS,CONTRIBUTORS", 
+	MimeType.set("README,LICENSE,COPYING,TODO,ABOUT,AUTHORS,CONTRIBUTORS",
 		"text/plain");
 	MimeType.set("manifest,.manifest,.mf,.appcache", "text/cache-manifest");
 	if (exports !== undefined) {
@@ -745,13 +748,13 @@
 		exports.del = MimeType.del;
 		exports.forEach = MimeType.forEach;
 	}
-        // Note: Chrome now defines window.MimeType, only define for legacy usage.
-        if (self.MimeType === undefined) {
-	    self.MimeType = MimeType;
-        }
-        // Note: Per Hypercuded switch to camel case to avoid Chrome issues.
-        if (self.mimeType === undefined) {
-            self.mimeType = MimeType;
-        }
+    // Note: Chrome now defines window.MimeType, only define for legacy usage.
+    if (self.MimeType === undefined) {
+        self.MimeType = MimeType;
+    }
+    // Note: Per Hypercuded switch to camel case to avoid Chrome issues.
+    if (self.mimeType === undefined) {
+        self.mimeType = MimeType;
+    }
 	return self;
 }(this));
