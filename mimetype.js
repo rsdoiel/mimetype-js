@@ -745,7 +745,8 @@
 		exports.del = MimeType.del;
 		exports.forEach = MimeType.forEach;
 	}
-
+        // Notes: window.MimeType may be defined in chrome, navigator.MimeType is documented for Firefox.
+        // need to have a good solution to avoid name collisions on window or other "this" absorbed by the this closure.
 	self.MimeType = MimeType;
 	return self;
 }(this));
