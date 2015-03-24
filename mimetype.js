@@ -731,6 +731,10 @@
 	MimeType.set(".avi", "video/x-msvideo");
 	MimeType.set(".movie", "video/x-sgi-movie");
 	MimeType.set(".ice", "x-conference/x-cooltalk");
+
+    // compressed tar files
+	MimeType.set(".gz", "application/x-gzip");
+	MimeType.set(".tgz", "application/x-gzip");
 			
 	// Not really sure about these...
 	MimeType.set(".epub", "application/epub+zip");
