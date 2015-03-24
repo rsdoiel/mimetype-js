@@ -732,6 +732,12 @@
 	MimeType.set(".movie", "video/x-sgi-movie");
 	MimeType.set(".ice", "x-conference/x-cooltalk");
 			
+    // Compressed files
+    // Based on notes at http://en.wikipedia.org/wiki/List_of_archive_formats
+    MimeType.set(".gz", "application/x-gzip");
+    MimeType.set(".tgz", "application/x-tar");
+    MimeType.set(".tar", "application/x-tar");
+
 	// Not really sure about these...
 	MimeType.set(".epub", "application/epub+zip");
 	MimeType.set(".mobi", "application/x-mobipocket-ebook");
