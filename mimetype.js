@@ -731,6 +731,10 @@
 	MimeType.set(".avi", "video/x-msvideo");
 	MimeType.set(".movie", "video/x-sgi-movie");
 	MimeType.set(".ice", "x-conference/x-cooltalk");
+
+    // compressed tar files
+	MimeType.set(".gz", "application/x-gzip");
+	MimeType.set(".tgz", "application/x-gzip");
 			
     // Compressed files
     // Based on notes at http://en.wikipedia.org/wiki/List_of_archive_formats
