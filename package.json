@@ -2,6 +2,7 @@
 	"name" : "mimetype",
 	"version" : "0.0.7",
 	"description" : "A mime type catalog driven by filename extensions.",
+    "license": "BSD-2-Clause",
 	"main" : "./mimetype.js",
 	"repository" : {
 		"type" : "git", 
@@ -28,5 +29,5 @@
 	},
 	"bugs": {
 		"url": "http://github.com/rsdoiel/mimetype-js/issues"
-   	}
+   	},
 }
