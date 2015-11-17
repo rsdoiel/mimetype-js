@@ -1,6 +1,6 @@
 {
 	"name" : "mimetype",
-	"version" : "0.0.7",
+	"version" : "0.0.8",
 	"description" : "A mime type catalog driven by filename extensions.",
     "license": "BSD-2-Clause",
 	"main" : "./mimetype.js",
