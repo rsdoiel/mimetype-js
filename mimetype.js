@@ -12,7 +12,7 @@
 (function (self) {
     "use strict";
 	var path, MimeType;
-	
+
 	// If we're NodeJS I can use the path module.
 	// If I'm MongoDB shell, not available.
 	if (require !== undefined) {
@@ -26,7 +26,7 @@
 			}
 		};
 	}
-	
+
 	if (exports === undefined) {
 		exports = {};
 	}
@@ -36,16 +36,16 @@
 		catalog: {},
 		lookup: function (fname, include_charset, default_mime_type) {
 			var ext, charset = this.charset;
-			
+
 			if (include_charset === undefined) {
 				include_charset = false;
 			}
-			
+
 			if (typeof include_charset === "string") {
 				charset = include_charset;
 				include_charset = true;
 			}
-	
+
 			if (path.extname !== undefined) {
 				ext = path.extname(fname).toLowerCase();
 			} else if (fname.lastIndexOf('.') > 0) {
@@ -53,13 +53,13 @@
 			} else {
 				ext = fname;
 			}
-			
+
 			// Handle the special cases where their is no extension
 			// e..g README, manifest, LICENSE, TODO
 			if (ext === "") {
 				ext = fname;
 			}
-	
+
 			if (this.catalog[ext] !== undefined) {
 				if (include_charset === true &&
                         this.catalog[ext].indexOf('text/') === 0 &&
@@ -108,7 +108,7 @@
 			return self.catalog;
 		}
 	};
-	
+
 	// From Apache project's mime type list.
 	MimeType.set(".ez", "application/andrew-inset");
 	MimeType.set(".aw", "application/applixware");
@@ -731,7 +731,9 @@
 	MimeType.set(".avi", "video/x-msvideo");
 	MimeType.set(".movie", "video/x-sgi-movie");
 	MimeType.set(".ice", "x-conference/x-cooltalk");
-			
+	MimeType.set(".indd", "application/x-indesign");
+  MimeType.set(".dat", "application/octet-stream");
+
     // Compressed files
     // Based on notes at http://en.wikipedia.org/wiki/List_of_archive_formats
     MimeType.set(".gz", "application/x-gzip");
