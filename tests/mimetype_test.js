@@ -17,13 +17,13 @@
         v0_0_3 = require('../lib/v0.0.3').data,
         mimetype = require('../mimetype'),
         basicTests;
-    
+
         // Tests for version 0.0.2
     basicTests = new Y.Test.Case({
         name: "Basic Tests",
         "Should pass tests for version 0.0.2": function () {
             var ky_cnt, i;
-            
+
             assert.areEqual(mimetype.lookup("myfile.txt"), 'text/plain', "lookup should return text/plain");
             assert.areEqual(mimetype.set('.exotic', 'x-application/experimental'), true, "set should return true for .exotic.");
             assert.areEqual(mimetype.lookup("myfile.exotic"), "x-application/experimental", "lookup should return x-application/experimental");
@@ -54,6 +54,8 @@
 
             assert.areEqual(mimetype.lookup("README"), "text/plain", "README should return text/plain mime-type.");
             assert.areEqual(mimetype.lookup("manifest"), "text/cache-manifest", "manifest should return text/plain mime-type.");
+            assert.areEqual(mimetype.lookup("test.indd"), "application/x-indesign", "Adobe InDesign files are application/x-indesign");
+            assert.areEqual(mimetype.lookup("test.dat"), "application/octet-stream", "Miscellaneous data files are application/octet-stream");
         },
 
         // tests for version 0.0.3
