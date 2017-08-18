@@ -710,6 +710,7 @@
 	MimeType.set(".jpm,.jpgm", "video/jpm");
 	MimeType.set(".mj2,.mjp2", "video/mj2");
 	MimeType.set(".mp4,.mp4v,.mpg4,.m4v", "video/mp4");
+	MimeType.set(".mkv,.mk3d,.mka,.mks", "video/x-matroska");
 	MimeType.set(".webm", "video/webm");
 	MimeType.set(".mpeg,.mpg,.mpe,.m1v,.m2v", "video/mpeg");
 	MimeType.set(".ogv", "video/ogg");
