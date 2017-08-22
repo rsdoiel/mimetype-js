@@ -15,7 +15,7 @@
 
 	// If we're NodeJS I can use the path module.
 	// If I'm MongoDB shell, not available.
-	if (require !== undefined) {
+	if (typeof require !== 'undefined') {
 		path = require('path');
 	} else {
 		path = {
