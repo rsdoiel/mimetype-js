@@ -33,11 +33,11 @@ default to a general purposes mime-type (e.g. text/plain, application/octet-stre
 	var mimetype = require('mimetype');
 	
 	// This should display 0 (false)
-	console.log(mimetype.lookup("filename.unknownMimeType");
+	console.log(mimetype.lookup("filename.unknownMimeType"));
 	// This should display the string text/plain
-	console.log(mimetype.lookup("filename.unknownMimeType", false, "text/plain");
+	console.log(mimetype.lookup("filename.unknownMimeType", false, "text/plain"));
 	// This should display the string text/plain; charset=UTF-8
-	console.log(mimetype.lookup("filename.unknownMimeType", "UTF-8", "text/plain");
+	console.log(mimetype.lookup("filename.unknownMimeType", "UTF-8", "text/plain"));
 ```
 
 ## Using mimetype.js with MongoDB Shell
